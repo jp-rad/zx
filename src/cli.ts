@@ -130,10 +130,15 @@ async function writeAndImport(
   filepath: string,
   origin = filepath
 ) {
+  console.log(`writeAndImport(1):\n  filepath=${filepath}\n  origin=${origin}`)
   await fs.writeFile(filepath, script.toString())
+  console.log(`writeAndImport(2):\n  filepath=${filepath}\n  origin=${origin}`)
   let wait = importPath(filepath, origin)
+  console.log(`writeAndImport(3):\n  filepath=${filepath}\n  origin=${origin}`)
   await fs.rm(filepath)
+  console.log(`writeAndImport(4):\n  filepath=${filepath}\n  origin=${origin}`)
   await wait
+  console.log(`writeAndImport(5):\n  filepath=${filepath}\n  origin=${origin}`)
 }
 
 async function importPath(filepath: string, origin = filepath) {
