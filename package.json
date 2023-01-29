@@ -39,6 +39,7 @@
     "node": ">= 16.0.0"
   },
   "scripts": {
+    "prepare": "npm run build",
     "fmt": "prettier --write .",
     "fmt:check": "prettier --check .",
     "build": "tsc --project tsconfig.prod.json",
